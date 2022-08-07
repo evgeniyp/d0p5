@@ -5,18 +5,20 @@
   "author": "Evgeniy Petukhov <evgeniy.petukhov@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "esbuild src/app.ts --external:./node_modules/* --bundle --platform=node --outdir=build --sourcemap=external",
+    "clean": "rimraf ./build",
+    "build": "tsc",
     "start": "nodemon",
     "prod": "yarn build && node build/app.js"
   },
   "devDependencies": {
     "@types/node": "^16.0.0",
-    "esbuild": "^0.14.53",
     "nodemon": "^2.0.19",
+    "rimraf": "^3.0.2",
     "typescript": "^4.7.4"
   },
   "dependencies": {
     "dotenv": "^16.0.1",
+    "playwright": "^1.24.2",
     "telegraf": "^4.8.6",
     "yup": "^0.32.11"
   }
