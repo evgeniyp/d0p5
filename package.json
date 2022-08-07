@@ -1,0 +1,22 @@
+{
+  "name": "d0p5",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "Evgeniy Petukhov <evgeniy.petukhov@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "esbuild src/app.ts --external:./node_modules/* --bundle --platform=node --outdir=build --sourcemap=external",
+    "start": "nodemon",
+    "prod": "yarn build && node build/app.js"
+  },
+  "devDependencies": {
+    "@types/node": "^16.0.0",
+    "esbuild": "^0.14.53",
+    "nodemon": "^2.0.19",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "yup": "^0.32.11"
+  }
+}
