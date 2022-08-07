@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "dotenv": "^16.0.1",
+    "telegraf": "^4.8.6",
     "yup": "^0.32.11"
   }
 }
