@@ -12,7 +12,7 @@ const transport = pino.transport({
       },
     },
     {
-      level: "trace",
+      level: "warn",
       target: "pino/file",
       options: {
         destination: "logs/app.log",

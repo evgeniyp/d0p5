@@ -3,11 +3,11 @@ import { abstractLogger } from "../logger/logger";
 
 const logger = abstractLogger.child({ name: "playwright" });
 
-export const playwright = async () => {
+export const makeScreenshot = async (address: string) => {
   const browser = await chromium.launch();
   const page = await browser.newPage();
-  await page.goto("http://example.com");
-  await page.screenshot({ path: "screenshot.png" });
+  await page.goto(address);
+  const buffer = await page.screenshot();
   await browser.close();
-  logger.info("Done");
+  return buffer;
 };

@@ -1,6 +1,7 @@
+import { getConfig } from "../config/config";
 import { abstractLogger } from "../logger/logger";
 
-const logger = abstractLogger.child({ name: "root" });
+const logger = abstractLogger.child({ name: "bootstrap" });
 
 export const bootstrap = () => {
   process
@@ -12,4 +13,6 @@ export const bootstrap = () => {
     process.exit(1);
   });
 
+  // Validate config
+  const _ = getConfig();
 }
